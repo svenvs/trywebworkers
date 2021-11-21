@@ -1,0 +1,26 @@
+{
+  "name": "trywebworkers",
+  "version": "1.0.0",
+  "description": "A repository where I am trying out webworkers",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --ss ./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svenvs/trywebworkers.git"
+  },
+  "author": "Sven and many where i copied from lol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svenvs/trywebworkers/issues"
+  },
+  "homepage": "https://github.com/svenvs/trywebworkers#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7"
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>Worker calculate prima</title>
+ </head>
+ <body>
+ <button id="toggle">Start</button>
+  <p>The highest prime number discovered so far is: <output id="result"></output></p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus tellus, tristique eu vestibulum ut, sagittis a ipsum. Suspendisse pulvinar id lacus a laoreet. Donec at lorem eleifend, blandit metus sed, sollicitudin lectus. Integer blandit est urna, eu eleifend odio commodo nec. Sed volutpat mauris a libero sagittis tempor. Mauris dignissim nulla ut orci aliquet efficitur. Ut cursus id magna sed efficitur. Vivamus luctus porta neque, id pharetra orci sagittis eu. Donec sed ex arcu. Donec vel nisl leo. Praesent et placerat tellus, ut iaculis sapien.
+
+Donec mauris risus, varius nec massa a, placerat rutrum dolor. Maecenas egestas lacus a lorem rutrum, a ullamcorper augue maximus. Vivamus sit amet metus volutpat, mollis ante congue, scelerisque massa. Phasellus non ante lacinia, scelerisque mi ut, maximus ex. Vivamus a mi vitae justo ullamcorper lobortis. Nam nec ultrices turpis, et dignissim dolor. Nulla sed ullamcorper nibh, nec tempor augue. Aliquam erat volutpat. Aliquam eu gravida ligula. Pellentesque non elit risus. Aliquam tellus felis, consectetur eget pharetra a, dignissim at risus. Phasellus et mi dui. Proin ut quam non diam faucibus tempus. Praesent id lorem et elit pellentesque gravida.
+
+Phasellus tempor tortor ut turpis fringilla, et auctor neque varius. Suspendisse non turpis magna. Cras finibus at odio in dignissim. Aliquam sapien diam, tincidunt eu aliquam sed, maximus ut turpis. Curabitur at lectus sed dolor cursus consequat ut nec eros. Donec convallis tortor et odio vulputate commodo. Nulla faucibus, sem ut interdum blandit, leo enim rutrum massa, vel pharetra mauris elit in turpis.
+
+  <script>
+   let worker = new Worker('worker.js');
+    const toggle = document.querySelector('#toggle');
+
+    toggle.addEventListener('click', e => {
+      worker.postMessage('toggle');
+    });
+
+   worker.onmessage = function (event) {
+     document.getElementById('result').textContent = event.data;
+   };
+  </script>
+ </body>
+</html>
